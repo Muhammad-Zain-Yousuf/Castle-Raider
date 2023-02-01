@@ -1,14 +1,13 @@
+#pragma once
+
 #include "Unit.hpp"
 
 class Decoration: public Unit {
 
-    int animate = 0;
 
     public:
+    //Decoration(int x, int y);
+    SDL_Rect get_Object();
+    virtual void place() = 0;
 
-    void fire();
-    void pond();
-    void skulls();
-    void pots_drums();
-    
 };

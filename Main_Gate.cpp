@@ -1,12 +1,12 @@
 #include "Main_Gate.hpp"
 
-Main_Gate::Main_Gate(int x = 500, int y = 100) {
+Main_Gate::Main_Gate(int x, int y) {
 
     x_pos = x;
     y_pos = y;
 
-    srcRect = {0,0,112,34};
-    moverRect = {x, y, 50, 50};
+    srcRect = {570,316,154,157};
+    moverRect = {x, y, 120, 120};
 
 }
 
@@ -14,15 +14,27 @@ void Main_Gate::Open() {
 
 
     if (animate == 0) { //For animating the pigeon while flying
-        srcRect = {0,0,160,133}; //Change to sprite 1
+        srcRect = {570,316,154,157}; //Change to sprite 1
         animate += 1; //increment counter
 
     } else if (animate == 1) {
-        srcRect = {0,141,151,146}; //Change to sprite 2
+        srcRect = {756,302,154,171}; //Change to sprite 2
         animate += 1;
     } else {
-        srcRect = {0,278,160,411}; //Change to sprite 3
-        animate = 0; //reset counter
+        srcRect = {937,301,161,171}; //Change to sprite 3
+        //animate = 0; //reset counter
     }
 
+}
+
+SDL_Rect Main_Gate::get_main() {
+
+    return moverRect;
+}
+
+bool Main_Gate::is_open() {
+
+    if (animate == 2) {return true;}
+
+    else {return false;}
 }

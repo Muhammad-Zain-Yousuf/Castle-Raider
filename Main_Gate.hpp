@@ -6,6 +6,8 @@ class Main_Gate: public Unit {
 
     public:
 
-    Main_Gate(int x, int y): x_pos(x), y_pos(y) {}
+    Main_Gate(int x, int y);
     void Open();
+    bool is_open();
+    SDL_Rect get_main();
 };

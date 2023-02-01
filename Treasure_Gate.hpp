@@ -6,7 +6,9 @@ class Treasure_Gate: public Unit {
 
     public:
 
-    Treasure_Gate(int x, int y): x_pos(x), y_pos(y) {}
+    Treasure_Gate(int x, int y);
     void Open();
+    bool Is_Open();
+    SDL_Rect get_TGate();
     
 };
